@@ -99,6 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: email,
                     style: inputTextStyle,
                     decoration: inputDecoration('Email'),
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 ),
                 Padding(

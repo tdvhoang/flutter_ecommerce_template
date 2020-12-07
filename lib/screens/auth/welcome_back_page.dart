@@ -62,13 +62,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                       fontStyle: FontStyle.normal,
                       fontSize: 20.0))),
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                    mainBlue,
-                    mainViolet,
-                  ],
-                  begin: FractionalOffset.centerLeft,
-                  end: FractionalOffset.centerRight),
+              gradient: mainButtonGradient,
               boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(0, 0, 0, 0.16),

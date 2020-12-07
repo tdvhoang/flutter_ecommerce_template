@@ -13,9 +13,9 @@ class CustomBottomBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             icon: SvgPicture.asset(
-                    'assets/icons/home_icon.svg',
-                    fit: BoxFit.fitWidth,
-                    ),
+              'assets/icons/home_icon.svg',
+              fit: BoxFit.fitWidth,
+            ),
             onPressed: () {
               controller.animateTo(0);
             },

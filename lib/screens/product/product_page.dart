@@ -113,7 +113,7 @@ class _ProductPageState extends State<ProductPage> {
                         width: 90,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(253, 192, 84, 1),
+                          color: mainBlue,
                           borderRadius: BorderRadius.circular(4.0),
                           border:
                               Border.all(color: Color(0xFFFFFFFF), width: 0.5),
@@ -121,7 +121,7 @@ class _ProductPageState extends State<ProductPage> {
                         child: Center(
                           child: new Text("Details",
                               style: const TextStyle(
-                                  color: const Color(0xeefefefe),
+                                  color: Colors.white,
                                   fontWeight: FontWeight.w300,
                                   fontStyle: FontStyle.normal,
                                   fontSize: 12.0)),
@@ -155,8 +155,8 @@ class _ProductPageState extends State<ProductPage> {
                   gradient: LinearGradient(
                       colors: [
                     Color.fromRGBO(255, 255, 255, 0),
-                    Color.fromRGBO(253, 192, 84, 0.5),
-                    Color.fromRGBO(253, 192, 84, 1),
+                    mainBlue.withAlpha(128),
+                    mainBlue,
                   ],
                       begin: FractionalOffset.topCenter,
                       end: FractionalOffset.bottomCenter)),

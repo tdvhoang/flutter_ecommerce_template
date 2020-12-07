@@ -134,7 +134,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               "Didn't receive the OPT? ",
               style: TextStyle(
                 fontStyle: FontStyle.italic,
-                color: Color.fromRGBO(255, 255, 255, 0.5),
+                color: Color.fromRGBO(255, 255, 255, 0.8),
                 fontSize: 14.0,
               ),
             ),
