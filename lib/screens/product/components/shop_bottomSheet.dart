@@ -12,21 +12,12 @@ class ShopBottomSheet extends StatefulWidget {
 
 class _ShopBottomSheetState extends State<ShopBottomSheet> {
   List<Product> products = [
-    Product(
-        'assets/headphones.png',
-        'Boat roackerz 400 On-Ear Bluetooth Headphones',
-        'description',
-        45.3),
-    Product(
-        'assets/headphones_2.png',
-        'Boat roackerz 100 On-Ear Bluetooth Headphones',
-        'description',
-        22.3),
-    Product(
-        'assets/headphones_3.png',
-        'Boat roackerz 300 On-Ear Bluetooth Headphones',
-        'description',
-        58.3)
+    Product('assets/headphones.png',
+        'Boat roackerz 400 On-Ear Bluetooth Headphones', 'description', 45.3),
+    Product('assets/headphones_2.png',
+        'Boat roackerz 100 On-Ear Bluetooth Headphones', 'description', 22.3),
+    Product('assets/headphones_3.png',
+        'Boat roackerz 300 On-Ear Bluetooth Headphones', 'description', 58.3)
   ];
 
   @override
@@ -52,7 +43,7 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
                     fontStyle: FontStyle.normal,
                     fontSize: 20.0))),
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -94,11 +85,14 @@ class _ShopBottomSheetState extends State<ShopBottomSheet> {
                   itemBuilder: (_, index) {
                     return Row(
                       children: <Widget>[
-                        ShopProduct(products[index],onRemove: (){
-                          setState(() {
-                            products.remove(products[index]);
-                          });
-                        },),
+                        ShopProduct(
+                          products[index],
+                          onRemove: () {
+                            setState(() {
+                              products.remove(products[index]);
+                            });
+                          },
+                        ),
                         index == 4
                             ? SizedBox()
                             : Container(

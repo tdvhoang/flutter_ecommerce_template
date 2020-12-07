@@ -19,7 +19,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
         height: 80,
         width: width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -68,7 +68,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 48.0,top:16.0),
+                            padding:
+                                const EdgeInsets.only(bottom: 48.0, top: 16.0),
                             child: Text(
                               'Change Password',
                               style: TextStyle(

@@ -11,14 +11,14 @@ class RatingDialog extends StatelessWidget {
     Widget payNow = InkWell(
       onTap: () async {
         Navigator.of(context).pop();
-        Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CheckOutPage()));
-
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => CheckOutPage()));
       },
       child: Container(
         height: 60,
         width: width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),

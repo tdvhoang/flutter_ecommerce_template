@@ -18,7 +18,7 @@ class RequestAmountPage extends StatelessWidget {
         height: 60,
         // width: width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -46,7 +46,7 @@ class RequestAmountPage extends StatelessWidget {
         height: 60,
         // width: width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),

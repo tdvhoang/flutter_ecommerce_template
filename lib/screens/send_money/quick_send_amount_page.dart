@@ -18,7 +18,7 @@ class QuickSendAmountPage extends StatelessWidget {
         width: width / 1.5,
         // width: width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -48,10 +48,8 @@ class QuickSendAmountPage extends StatelessWidget {
             IconButton(
               icon: Image.asset('assets/icons/cut_qr.png'),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (_) =>
-                          ReceivePaymentPage(user)));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => ReceivePaymentPage(user)));
               },
             )
           ],

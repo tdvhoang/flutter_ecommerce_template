@@ -1,7 +1,8 @@
 import 'package:ecommerce_int2/app_properties.dart';
+import 'package:ecommerce_int2/utils.dart';
 import 'package:flutter/material.dart';
-
 import 'forgot_password_page.dart';
+import 'package:ecommerce_int2/utils.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController email =
-      TextEditingController(text: 'example@email.com');
+      TextEditingController(text: 'email@terralogic.com');
 
   TextEditingController password = TextEditingController(text: '12345678');
 
@@ -63,7 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       fontStyle: FontStyle.normal,
                       fontSize: 20.0))),
           decoration: BoxDecoration(
-              gradient: mainButton,
+              gradient: mainButtonGradient,
               boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -96,23 +97,26 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
                     controller: email,
-                    style: TextStyle(fontSize: 16.0),
+                    style: inputTextStyle,
+                    decoration: inputDecoration('Email'),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
                     controller: password,
-                    style: TextStyle(fontSize: 16.0),
+                    style: inputTextStyle,
                     obscureText: true,
+                    decoration: inputDecoration('Password'),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
                     controller: cmfPassword,
-                    style: TextStyle(fontSize: 16.0),
+                    style: inputTextStyle,
                     obscureText: true,
+                    decoration: inputDecoration('Confirm Password'),
                   ),
                 ),
               ],
@@ -134,12 +138,12 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.find_replace),
+              icon: Icon(Icons.alternate_email),
               onPressed: () {},
               color: Colors.white,
             ),
             IconButton(
-                icon: Icon(Icons.find_replace),
+                icon: Icon(Icons.qr_code),
                 onPressed: () {},
                 color: Colors.white),
           ],

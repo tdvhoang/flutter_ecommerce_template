@@ -9,10 +9,12 @@ const Color mainViolet = Color(0xffdc33a9);
 const Color mainBlue = Color(0xff5e98e8);
 const Color mainBackground = Color(0xfff6f8ff);
 
-const LinearGradient mainButton = LinearGradient(colors: [
+const LinearGradient mainButtonGradient = LinearGradient(colors: [
   mainBlue,
   mainViolet,
 ], begin: FractionalOffset.centerLeft, end: FractionalOffset.centerRight);
+
+const TextStyle inputTextStyle = TextStyle(fontSize: 16.0, color: mainViolet);
 
 const List<BoxShadow> shadow = [
   BoxShadow(color: Colors.black12, offset: Offset(0, 3), blurRadius: 6)

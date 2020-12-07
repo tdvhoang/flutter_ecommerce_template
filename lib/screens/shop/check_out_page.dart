@@ -18,21 +18,12 @@ class _CheckOutPageState extends State<CheckOutPage> {
   SwiperController swiperController = SwiperController();
 
   List<Product> products = [
-    Product(
-        'assets/headphones.png',
-        'Boat roackerz 400 On-Ear Bluetooth Headphones',
-        'description',
-        45.3),
-    Product(
-        'assets/headphones_2.png',
-        'Boat roackerz 100 On-Ear Bluetooth Headphones',
-        'description',
-        22.3),
-    Product(
-        'assets/headphones_3.png',
-        'Boat roackerz 300 On-Ear Bluetooth Headphones',
-        'description',
-        58.3)
+    Product('assets/headphones.png',
+        'Boat roackerz 400 On-Ear Bluetooth Headphones', 'description', 45.3),
+    Product('assets/headphones_2.png',
+        'Boat roackerz 100 On-Ear Bluetooth Headphones', 'description', 22.3),
+    Product('assets/headphones_3.png',
+        'Boat roackerz 300 On-Ear Bluetooth Headphones', 'description', 58.3)
   ];
 
   @override
@@ -44,7 +35,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
         height: 80,
         width: MediaQuery.of(context).size.width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),
@@ -73,8 +64,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
         actions: <Widget>[
           IconButton(
             icon: Image.asset('assets/icons/denied_wallet.png'),
-              onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => UnpaidPage())),
+            onPressed: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => UnpaidPage())),
           )
         ],
         title: Text(
@@ -119,11 +110,14 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   height: 300,
                   child: Scrollbar(
                     child: ListView.builder(
-                      itemBuilder: (_, index) => ShopItemList(products[index],onRemove: (){
-                        setState(() {
-                          products.remove(products[index]);
-                        });
-                      },),
+                      itemBuilder: (_, index) => ShopItemList(
+                        products[index],
+                        onRemove: () {
+                          setState(() {
+                            products.remove(products[index]);
+                          });
+                        },
+                      ),
                       itemCount: products.length,
                     ),
                   ),

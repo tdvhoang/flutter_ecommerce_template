@@ -32,7 +32,7 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
               controller: otpController,
               decoration: InputDecoration(
                   border: InputBorder.none, contentPadding: EdgeInsets.zero),
-              style: TextStyle(fontSize: 16.0),
+              style: TextStyle(fontSize: 16.0, color: mainViolet),
               keyboardType: TextInputType.phone,
             ),
           ),
@@ -85,21 +85,7 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
                       fontStyle: FontStyle.normal,
                       fontSize: 20.0))),
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                    Color.fromRGBO(236, 60, 3, 1),
-                    Color.fromRGBO(234, 60, 3, 1),
-                    Color.fromRGBO(216, 78, 16, 1),
-                  ],
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.16),
-                  offset: Offset(0, 5),
-                  blurRadius: 10.0,
-                )
-              ],
+              gradient: mainButtonGradient,
               borderRadius: BorderRadius.circular(9.0)),
         ),
       ),
@@ -175,11 +161,13 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
                         child: Center(
                           child: PinCodeTextField(
                             controller: new TextEditingController(),
-                            highlightColor: Colors.white,
+                            highlightColor: Colors.red,
                             highlightAnimation: true,
                             highlightAnimationBeginColor: Colors.white,
-                            highlightAnimationEndColor: Theme.of(context).primaryColor,
-                            pinTextAnimatedSwitcherDuration: Duration(milliseconds: 500),
+                            highlightAnimationEndColor:
+                                Theme.of(context).primaryColor,
+                            pinTextAnimatedSwitcherDuration:
+                                Duration(milliseconds: 500),
                             wrapAlignment: WrapAlignment.center,
                             hasTextBorderColor: Colors.transparent,
                             highlightPinBoxColor: Colors.white,

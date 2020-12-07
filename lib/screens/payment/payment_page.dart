@@ -20,10 +20,10 @@ class _PaymentPageState extends State<PaymentPage> {
   ScrollController scrollController = ScrollController();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    scrollController.addListener((){
-      if(scrollController.position.userScrollDirection.index==1){
+    scrollController.addListener(() {
+      if (scrollController.position.userScrollDirection.index == 1) {
         FocusScope.of(context).requestFocus(FocusNode());
       }
     });
@@ -55,7 +55,7 @@ class _PaymentPageState extends State<PaymentPage> {
         height: 80,
         width: MediaQuery.of(context).size.width / 1.5,
         decoration: BoxDecoration(
-            gradient: mainButton,
+            gradient: mainButtonGradient,
             boxShadow: [
               BoxShadow(
                 color: Color.fromRGBO(0, 0, 0, 0.16),

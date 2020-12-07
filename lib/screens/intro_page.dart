@@ -18,7 +18,10 @@ class _IntroPageState extends State<IntroPage> {
 //      width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Colors.grey[100],
-            image: DecorationImage(image: AssetImage('assets/background.png'))),
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.2), BlendMode.dstIn),
+                image: AssetImage('assets/pattern-gradient.png'))),
         child: Stack(
           children: <Widget>[
             PageView(
@@ -43,7 +46,7 @@ class _IntroPageState extends State<IntroPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Text(
-                        'Get Any Thing Online',
+                        'Top Mobile App Development Company',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -53,7 +56,7 @@ class _IntroPageState extends State<IntroPage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16.0),
                       child: Text(
-                        'You can buy anything ranging from digital products to hardware within few clicks.',
+                        'Awarded as one of the top B2B app development companies of 2020.',
                         textAlign: TextAlign.right,
                         style: TextStyle(color: Colors.grey, fontSize: 12.0),
                       ),
@@ -74,7 +77,7 @@ class _IntroPageState extends State<IntroPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Text(
-                        'Shipping to anywhere ',
+                        'Design Driven Technology Innovations',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -84,7 +87,7 @@ class _IntroPageState extends State<IntroPage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16.0),
                       child: Text(
-                        'We will ship to anywhere in the world, With 30 day 100% money back policy.',
+                        'We are an IT Company that translates your business needs to scalable solutions.',
                         textAlign: TextAlign.right,
                         style: TextStyle(color: Colors.grey, fontSize: 12.0),
                       ),
@@ -105,7 +108,7 @@ class _IntroPageState extends State<IntroPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: Text(
-                        'On-time delivery',
+                        'Accredited ISO 9001:2015',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -115,7 +118,7 @@ class _IntroPageState extends State<IntroPage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16.0),
                       child: Text(
-                        'You can track your product with our powerful tracking service.',
+                        'Terralogic is proud to be recognized as one of the accredited organizations under the ISO 9001:2015 certification.',
                         textAlign: TextAlign.right,
                         style: TextStyle(color: Colors.grey, fontSize: 12.0),
                       ),
@@ -140,7 +143,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 0 ? yellow : Colors.white),
+                              color: pageIndex == 0 ? mainBlue : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(8.0),
@@ -149,7 +152,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 1 ? yellow : Colors.white),
+                              color: pageIndex == 1 ? mainBlue : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(8.0),
@@ -158,7 +161,7 @@ class _IntroPageState extends State<IntroPage> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.black, width: 2),
-                              color: pageIndex == 2 ? yellow : Colors.white),
+                              color: pageIndex == 2 ? mainBlue : Colors.white),
                         )
                       ],
                     ),

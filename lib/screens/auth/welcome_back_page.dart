@@ -1,4 +1,5 @@
 import 'package:ecommerce_int2/app_properties.dart';
+import 'package:ecommerce_int2/utils.dart';
 import 'package:flutter/material.dart';
 
 import 'register_page.dart';
@@ -100,35 +101,18 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
                     controller: email,
-                    style: TextStyle(fontSize: 16.0, color: mainViolet),
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      hintStyle: TextStyle(color: Color(0x88dc33a9)),
-                      focusedBorder: new UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: mainBlue,
-                            width: 1.5,
-                            style: BorderStyle.solid),
-                      ),
-                    ),
+                    style: inputTextStyle,
+                    decoration: inputDecoration("Email"),
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: TextField(
                     controller: password,
-                    style: TextStyle(fontSize: 16.0, color: mainViolet),
+                    style: inputTextStyle,
                     obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      hintStyle: TextStyle(color: Color(0x88dc33a9)),
-                      focusedBorder: new UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: mainBlue,
-                            width: 1.5,
-                            style: BorderStyle.solid),
-                      ),
-                    ),
+                    decoration: inputDecoration("Password"),
                   ),
                 ),
               ],

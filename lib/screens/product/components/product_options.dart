@@ -8,7 +8,8 @@ import 'shop_bottomSheet.dart';
 class ProductOption extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
   final Product product;
-  const ProductOption(this.scaffoldKey, {Key key, this.product}) : super(key: key);
+  const ProductOption(this.scaffoldKey, {Key key, this.product})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +45,14 @@ class ProductOption extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () async {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_)=>CheckOutPage()));
-
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => CheckOutPage()));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width / 2.5,
                       decoration: BoxDecoration(
                           color: Colors.red,
-                          gradient: mainButton,
+                          gradient: mainButtonGradient,
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10.0),
                               bottomLeft: Radius.circular(10.0))),
@@ -77,7 +78,7 @@ class ProductOption extends StatelessWidget {
                       width: MediaQuery.of(context).size.width / 2.5,
                       decoration: BoxDecoration(
                           color: Colors.red,
-                          gradient: mainButton,
+                          gradient: mainButtonGradient,
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10.0),
                               bottomLeft: Radius.circular(10.0))),
