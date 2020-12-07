@@ -2,7 +2,6 @@ import 'package:ecommerce_int2/app_properties.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-
 class RatingBottomSheet extends StatefulWidget {
   @override
   _RatingBottomSheetState createState() => _RatingBottomSheetState();
@@ -21,6 +20,7 @@ class _RatingBottomSheetState extends State<RatingBottomSheet> {
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(24), topLeft: Radius.circular(24))),
       child: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 20),
         children: <Widget>[
           Column(
             children: <Widget>[

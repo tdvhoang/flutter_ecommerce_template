@@ -80,7 +80,10 @@ class _ViewProductPageState extends State<ViewProductPage> {
           iconTheme: IconThemeData(color: darkGrey),
           actions: <Widget>[
             IconButton(
-              icon: new SvgPicture.asset('assets/icons/search_icon.svg', fit: BoxFit.scaleDown,),
+              icon: new SvgPicture.asset(
+                'assets/icons/search_icon.svg',
+                fit: BoxFit.scaleDown,
+              ),
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (_) => SearchPage())),
             )
@@ -119,12 +122,12 @@ class _ViewProductPageState extends State<ViewProductPage> {
                     RawMaterialButton(
                       onPressed: () {
                         showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              return RatingBottomSheet();
-                            },
-                            //elevation: 0,
-                            //backgroundColor: Colors.transparent
+                          context: context,
+                          builder: (context) {
+                            return RatingBottomSheet();
+                          },
+                          //elevation: 0,
+                          //backgroundColor: Colors.transparent
                         );
                       },
                       constraints:
@@ -133,7 +136,7 @@ class _ViewProductPageState extends State<ViewProductPage> {
                           color: Color.fromRGBO(255, 137, 147, 1)),
                       elevation: 0.0,
                       shape: CircleBorder(),
-                      fillColor: Color.fromRGBO(255, 255, 255, 0.4),
+                      fillColor: Colors.white,
                     ),
                   ]),
                 ),

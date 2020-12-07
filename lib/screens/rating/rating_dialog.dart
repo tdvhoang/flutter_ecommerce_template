@@ -11,8 +11,8 @@ class RatingDialog extends StatelessWidget {
     Widget payNow = InkWell(
       onTap: () async {
         Navigator.of(context).pop();
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => CheckOutPage()));
+        // Navigator.of(context)
+        //     .push(MaterialPageRoute(builder: (_) => CheckOutPage()));
       },
       child: Container(
         height: 60,
@@ -28,7 +28,7 @@ class RatingDialog extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(9.0)),
         child: Center(
-          child: Text("Pay Now",
+          child: Text("Submit",
               style: const TextStyle(
                   color: const Color(0xfffefefe),
                   fontWeight: FontWeight.w600,

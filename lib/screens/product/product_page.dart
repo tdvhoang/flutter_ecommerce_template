@@ -155,7 +155,7 @@ class _ProductPageState extends State<ProductPage> {
                   gradient: LinearGradient(
                       colors: [
                     Color.fromRGBO(255, 255, 255, 0),
-                    mainBlue.withAlpha(128),
+                    mainBlue.withAlpha(50),
                     mainBlue,
                   ],
                       begin: FractionalOffset.topCenter,
