@@ -1,8 +1,9 @@
 import 'package:ecommerce_int2/app_properties.dart';
 import 'package:ecommerce_int2/utils.dart';
 import 'package:flutter/material.dart';
-
+import 'forgot_password_page.dart';
 import 'register_page.dart';
+import 'package:ecommerce_int2/screens/intro_page.dart';
 
 class WelcomeBackPage extends StatefulWidget {
   @override
@@ -11,13 +12,14 @@ class WelcomeBackPage extends StatefulWidget {
 
 class _WelcomeBackPageState extends State<WelcomeBackPage> {
   TextEditingController email =
-      TextEditingController(text: 'email@terralogic.com');
+      TextEditingController(text: '');
 
-  TextEditingController password = TextEditingController(text: '123456#aA');
+  TextEditingController password = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
     print("[Info] Showing welcome page");
+    final node = FocusScope.of(context);
     Widget welcomeBack = Text(
       'Welcome Back\nGuest,',
       style: TextStyle(
@@ -49,7 +51,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       child: InkWell(
         onTap: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => RegisterPage()));
+              .push(MaterialPageRoute(builder: (_) => IntroPage()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 2,
@@ -98,6 +100,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                     style: inputTextStyle,
                     decoration: inputDecoration("Email"),
                     keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                    onEditingComplete: () => node.nextFocus(),
                   ),
                 ),
                 Padding(
@@ -107,12 +111,47 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                     style: inputTextStyle,
                     obscureText: true,
                     decoration: inputDecoration("Password"),
+                    textInputAction: TextInputAction.done,
+                    onEditingComplete: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) => RegisterPage()));
+                      },
                   ),
                 ),
               ],
             ),
           ),
           loginButton,
+        ],
+      ),
+    );
+
+    Widget registerUser = Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Don\'t have account yet? ',
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+              color: Color.fromRGBO(255, 255, 255, 0.8),
+              fontSize: 14.0,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) => RegisterPage()));
+            },
+            child: Text(
+              'Register',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 14.0,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -131,7 +170,9 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+            },
             child: Text(
               'Reset password',
               style: TextStyle(
@@ -156,7 +197,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: transparentYellow,
+              gradient: mainGradient
             ),
           ),
           Padding(
@@ -171,6 +212,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                 Spacer(flex: 2),
                 loginForm,
                 Spacer(flex: 2),
+                registerUser,
                 forgotPassword
               ],
             ),

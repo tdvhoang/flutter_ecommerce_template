@@ -3,6 +3,8 @@ import 'package:ecommerce_int2/utils.dart';
 import 'package:flutter/material.dart';
 import 'forgot_password_page.dart';
 import 'package:ecommerce_int2/utils.dart';
+import 'package:ecommerce_int2/screens/intro_page.dart';
+import 'package:ecommerce_int2/screens/auth/confirm_otp_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -11,15 +13,16 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController email =
-      TextEditingController(text: 'email@terralogic.com');
+      TextEditingController(text: '');
 
-  TextEditingController password = TextEditingController(text: '12345678');
+  TextEditingController password = TextEditingController(text: '');
 
-  TextEditingController cmfPassword = TextEditingController(text: '12345678');
+  TextEditingController cmfPassword = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
     print("[Info] Showing register page");
+    final node = FocusScope.of(context);
     Widget title = Text(
       'Glad To Meet You',
       style: TextStyle(
@@ -51,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: InkWell(
         onTap: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+              .push(MaterialPageRoute(builder: (_) => ConfirmOtpPage()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width / 2,
@@ -100,6 +103,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: inputTextStyle,
                     decoration: inputDecoration('Email'),
                     keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                    onEditingComplete: () => node.nextFocus(),
                   ),
                 ),
                 Padding(
@@ -109,6 +114,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: inputTextStyle,
                     obscureText: true,
                     decoration: inputDecoration('Password'),
+                    textInputAction: TextInputAction.next,
+                    onEditingComplete: () => node.nextFocus(),
                   ),
                 ),
                 Padding(
@@ -118,6 +125,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: inputTextStyle,
                     obscureText: true,
                     decoration: inputDecoration('Confirm Password'),
+                    textInputAction: TextInputAction.done,
+                    onEditingComplete: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+                    },
                   ),
                 ),
               ],
@@ -140,12 +151,16 @@ class _RegisterPageState extends State<RegisterPage> {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.alternate_email),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pop(context);
+              },
               color: Colors.white,
             ),
             IconButton(
                 icon: Icon(Icons.qr_code),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop(context);
+                },
                 color: Colors.white),
           ],
         )
@@ -163,7 +178,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              color: transparentYellow,
+                gradient: mainGradient
             ),
           ),
           Padding(

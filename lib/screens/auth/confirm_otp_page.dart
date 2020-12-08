@@ -138,7 +138,7 @@ class _ConfirmOtpPageState extends State<ConfirmOtpPage> {
             image: DecorationImage(
                 image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
         child: Container(
-          decoration: BoxDecoration(color: transparentYellow),
+          decoration: BoxDecoration(gradient: mainGradient),
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,

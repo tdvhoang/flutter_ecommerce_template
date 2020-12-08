@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
                         children: [
                           TextSpan(text: 'Powered by '),
                           TextSpan(
-                              text: 'int2.io',
+                              text: 'terralogic.com',
                               style: TextStyle(fontWeight: FontWeight.bold))
                         ]),
                   ),

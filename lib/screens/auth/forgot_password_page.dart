@@ -11,7 +11,7 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  TextEditingController phoneNumber = TextEditingController(text: '46834683');
+  TextEditingController phoneNumber = TextEditingController(text: '');
 
   GlobalKey prefixKey = GlobalKey();
   double prefixWidth = 0;
@@ -126,7 +126,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     );
 
     Widget resendAgainText = Padding(
-        padding: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.only(bottom: 50),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -158,7 +158,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             image: DecorationImage(
                 image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
         child: Container(
-          decoration: BoxDecoration(color: transparentYellow),
+          decoration: BoxDecoration(gradient: mainGradient),
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,

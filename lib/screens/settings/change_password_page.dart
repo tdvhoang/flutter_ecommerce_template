@@ -1,4 +1,5 @@
 import 'package:ecommerce_int2/app_properties.dart';
+import 'package:ecommerce_int2/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,12 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double bottomPadding = MediaQuery.of(context).padding.bottom;
+    final node = FocusScope.of(context);
 
     Widget changePasswordButton = InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).pop(context);
+      },
       child: Container(
         height: 80,
         width: width / 1.5,
@@ -93,10 +97,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5))),
                               child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Existing Password',
-                                    hintStyle: TextStyle(fontSize: 12.0)),
+                                textInputAction: TextInputAction.next,
+                                decoration: inputDecoration('Existing Password'),
+                                onEditingComplete: () => node.nextFocus(),
                               )),
                           Padding(
                             padding:
@@ -114,10 +117,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5))),
                               child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'New Password',
-                                    hintStyle: TextStyle(fontSize: 12.0)),
+                                textInputAction: TextInputAction.next,
+                                decoration: inputDecoration('New Password'),
+                                onEditingComplete: () => node.nextFocus(),
                               )),
                           Padding(
                             padding:
@@ -135,10 +137,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5))),
                               child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Retype Password',
-                                    hintStyle: TextStyle(fontSize: 12.0)),
+                                textInputAction: TextInputAction.done,
+                                decoration: inputDecoration('Retype Password'),
+                                onEditingComplete: () {
+                                  Navigator.of(context).pop();
+                                },
                               )),
                         ],
                       ),
