@@ -13,11 +13,11 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController email =
-      TextEditingController(text: '');
+      TextEditingController(text: 'hoang.tran@terralogic.com');
 
-  TextEditingController password = TextEditingController(text: '');
+  TextEditingController password = TextEditingController(text: 'password');
 
-  TextEditingController cmfPassword = TextEditingController(text: '');
+  TextEditingController cmfPassword = TextEditingController(text: 'password');
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +127,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     decoration: inputDecoration('Confirm Password'),
                     textInputAction: TextInputAction.done,
                     onEditingComplete: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => ForgotPasswordPage()));
                     },
                   ),
                 ),
@@ -177,9 +178,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     fit: BoxFit.cover)),
           ),
           Container(
-            decoration: BoxDecoration(
-                gradient: mainGradient
-            ),
+            decoration: BoxDecoration(gradient: mainGradient),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 28.0),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AddAddressForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
     return SizedBox(
       height: 500,
       child: Column(
@@ -17,8 +18,10 @@ class AddAddressForm extends StatelessWidget {
               color: Colors.white,
             ),
             child: TextField(
+              onEditingComplete: () => node.nextFocus(),
               decoration: InputDecoration(
-                  border: InputBorder.none, hintText: 'Flat Number/House Number'),
+                  border: InputBorder.none,
+                  hintText: 'Flat Number/House Number'),
             ),
           ),
           Container(
@@ -28,6 +31,7 @@ class AddAddressForm extends StatelessWidget {
               color: Colors.white,
             ),
             child: TextField(
+              onEditingComplete: () => node.nextFocus(),
               decoration:
                   InputDecoration(border: InputBorder.none, hintText: 'Street'),
             ),
@@ -54,6 +58,7 @@ class AddAddressForm extends StatelessWidget {
                   ),
                   child: TextField(
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    onEditingComplete: () => node.nextFocus(),
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Name on card',
@@ -72,6 +77,7 @@ class AddAddressForm extends StatelessWidget {
               color: Colors.white,
             ),
             child: TextField(
+              onEditingComplete: () => node.nextFocus(),
               decoration: InputDecoration(
                   border: InputBorder.none, hintText: 'Name on card'),
             ),
@@ -86,6 +92,7 @@ class AddAddressForm extends StatelessWidget {
                 color: Colors.white,
               ),
               child: TextField(
+                onEditingComplete: () => node.nextFocus(),
                 decoration: InputDecoration(
                     border: InputBorder.none, hintText: 'Postal code'),
               ),

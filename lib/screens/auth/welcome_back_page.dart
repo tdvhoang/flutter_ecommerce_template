@@ -11,8 +11,7 @@ class WelcomeBackPage extends StatefulWidget {
 }
 
 class _WelcomeBackPageState extends State<WelcomeBackPage> {
-  TextEditingController email =
-      TextEditingController(text: '');
+  TextEditingController email = TextEditingController(text: '');
 
   TextEditingController password = TextEditingController(text: '');
 
@@ -114,8 +113,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                     textInputAction: TextInputAction.done,
                     onEditingComplete: () {
                       Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (_) => RegisterPage()));
-                      },
+                          .push(MaterialPageRoute(builder: (_) => IntroPage()));
+                    },
                   ),
                 ),
               ],
@@ -141,7 +140,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) => RegisterPage()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => RegisterPage()));
             },
             child: Text(
               'Register',
@@ -171,7 +171,8 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => ForgotPasswordPage()));
             },
             child: Text(
               'Reset password',
@@ -196,9 +197,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                     fit: BoxFit.cover)),
           ),
           Container(
-            decoration: BoxDecoration(
-              gradient: mainGradient
-            ),
+            decoration: BoxDecoration(gradient: mainGradient),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 28.0),
